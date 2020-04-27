@@ -1,0 +1,14 @@
+.depthChartPlayer {
+    display: flex;
+    background-color: #efefef;
+    border: 1px solid grey;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+    float: left;
+  }
+
+  .depthChartPlayer:hover {
+    transform: scale(1.05);
+  }

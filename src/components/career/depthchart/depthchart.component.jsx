@@ -1,28 +1,17 @@
 import React from 'react';
 
 import DepthChartRow from '../depthchartrow/depthchartrow.component';
+import './depthchart.styles.scss';
 
-class DepthChart extends React.Component {
-    constructor() {
-        super();
-        
-        this.state = {
-            formation : [4,4,2]
+const DepthChart = props => (
+    <div className="depthChart">
+        {
+        props.formation.split('-').reverse().map(n => (
+            <DepthChartRow slots={parseInt(n)} />
+        ))
         }
-    }
-
-    render() {
-        return(
-            <div className="depthChart">
-                {
-                this.state.formation.reverse().map((n) => (
-                    <DepthChartRow slots={n} />
-                ))
-                }
-                <DepthChartRow slots={1}/>
-            </div>
-        )
-    }
-}
+        <DepthChartRow slots={1}/>
+    </div>
+);
 
 export default DepthChart;
