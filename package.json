@@ -5,6 +5,7 @@
   "dependencies": {
     "@babel/runtime": "^7.4.3",
     "algoliasearch": "^3.32.1",
+    "node-sass": "^4.14.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-instantsearch": "^5.4.0",
