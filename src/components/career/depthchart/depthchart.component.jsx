@@ -3,11 +3,11 @@ import React from 'react';
 import DepthChartRow from '../depthchartrow/depthchartrow.component';
 import './depthchart.styles.scss';
 
-const DepthChart = props => (
+const DepthChart = ({formation, squad}) => (
     <div className="depthChart">
         {
-        props.formation.split('-').reverse().map(n => (
-            <DepthChartRow slots={parseInt(n)} />
+        formation.split('-').reverse().map(n => (
+            <DepthChartRow slots={parseInt(n)} players={squad} />
         ))
         }
         <DepthChartRow slots={1}/>

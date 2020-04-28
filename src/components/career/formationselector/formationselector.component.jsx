@@ -4,7 +4,7 @@ const FormationSelector = ({handler}) => (
     <form>
         <label >Change Formation</label>
         <select onChange={handler}>
-            <option selected value="4-3-3">4-3-3</option>
+            <option value="4-3-3">4-3-3</option>
             <option value="4-4-2">4-4-2</option>
             <option value="4-1-2-1-2">4-4-2 Diamond</option>
             <option value="4-2-4">4-2-4</option>

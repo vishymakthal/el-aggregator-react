@@ -1,14 +1,25 @@
 .depthChartPlayer {
     display: flex;
-    background-color: #efefef;
+    background-color: white;
     border: 1px solid grey;
-    -moz-osx-font-smoothing: grayscale;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-    transition: transform 0.25s ease-out;
-    float: left;
+    margin: 0 auto;
   }
 
   .depthChartPlayer:hover {
     transform: scale(1.05);
   }
+
+.playerRow {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.playerOverall {
+  border: 1px solid limegreen;
+  background-color: lightgreen;
+}
+
+.playerPotential {
+  border: 1px solid skyblue;
+  background-color: lightskyblue;
+}
