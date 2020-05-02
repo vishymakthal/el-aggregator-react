@@ -2,7 +2,13 @@
     display: flex;
     background-color: white;
     border: 1px solid grey;
-    margin: 0 auto;
+    margin: 3px 0 3px  auto;
+    border-radius: 5px;
+    cursor: pointer;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
   }
 
   .depthChartPlayer:hover {
@@ -17,9 +23,11 @@
 .playerOverall {
   border: 1px solid limegreen;
   background-color: lightgreen;
+  justify-self: flex-end;
 }
 
 .playerPotential {
   border: 1px solid skyblue;
   background-color: lightskyblue;
+  justify-self: flex-end;
 }

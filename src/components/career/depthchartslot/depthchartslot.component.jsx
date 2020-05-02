@@ -6,7 +6,7 @@ import DepthChartPlayer from '../depthchartplayer/depthchartplayer.component';
 const DepthChartSlot = ({players}) => (
     <div className="depthChartSlot">
         <table>
-            {players.map(p => (<DepthChartPlayer player={p}/>))}
+            {players.reverse().map(p => (<DepthChartPlayer player={p}/>))}
         </table>
     </div>
 );

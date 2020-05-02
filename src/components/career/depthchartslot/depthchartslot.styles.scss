@@ -1,6 +1,5 @@
 .depthChartSlot {
     display: flex;
-    background-color: #000000;
     -moz-osx-font-smoothing: grayscale;
     backface-visibility: hidden;
     transform: translateZ(0);
@@ -9,5 +8,5 @@
   }
 
   .depthChartSlot:hover {
-    transform: scale(1.05);
+    border-color: black;
   }
