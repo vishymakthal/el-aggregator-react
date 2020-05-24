@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SearchBox from '../components/searchbox/searchbox.component';
+import SearchBox from '../../components/searchbox/searchbox.component';
 
 const HomePage = () => (
     <div>

@@ -1,6 +1,6 @@
 import React from 'react';
-import DepthChart from '../components/career/depthchart/depthchart.component';
-import FormationSelector from '../components/career/formationselector/formationselector.component';
+import DepthChart from '../../components/career/depthchart/depthchart.component';
+import FormationSelector from '../../components/career/formationselector/formationselector.component';
 
 class CareerPage extends React.Component {
     constructor () {
@@ -12,12 +12,12 @@ class CareerPage extends React.Component {
         }
     }
 
-    componentDidMount () {
+    async componentDidMount () {
         fetch('http://localhost:8080/api/v1/players/team/979786270', {method: 'GET'})
         .then(response => response.json())
-        .then(players => this.setState({squad : players}));
+        .then(players => this.setState({squad : players}))
     }
-
+    
     render() {
        
         const formationRows = this.state.currentFormation.split('-')
