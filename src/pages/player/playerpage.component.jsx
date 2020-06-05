@@ -32,7 +32,7 @@ class PlayerPage extends React.Component {
 
             <div className='playerPage'>
                 <ProfileSection playerData={playerData} />
-                {/* <FifaSection /> */}
+                <FifaSection playerData={playerData} />
                 {/* <HighlightSection playerName={playerData.short_name} /> */}
             </div>
         )

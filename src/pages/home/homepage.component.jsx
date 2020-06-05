@@ -2,9 +2,11 @@ import React from 'react';
 
 import SearchBox from '../../components/searchbox/searchbox.component';
 
+import './homepage.styles.scss';
+
 const HomePage = () => (
-    <div>
-        <h1>El Aggregator</h1>
+    <div className="homePage">
+        <h1>EL AGGREGATOR</h1>
             <SearchBox/>                
     </div>
 );
