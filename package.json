@@ -7,6 +7,7 @@
     "algoliasearch": "^3.32.1",
     "node-sass": "^4.14.0",
     "react": "^16.8.6",
+    "react-chartjs-2": "^2.9.0",
     "react-dom": "^16.8.6",
     "react-instantsearch": "^5.4.0",
     "react-instantsearch-dom": "^5.4.0",
