@@ -19,7 +19,7 @@ class App extends Component {
         <Route exact path='/' component={HomePage} />
         <Route path='/career' component={CareerPage} />
         <Route exact path='/player/:id' component={PlayerPage} />
-        <Route exact path='/team/:id'   component={TeamPage} />
+        <Route exact path='/team/:id/:name'   component={TeamPage} />
       </Switch>
     </div>
     );

@@ -2,20 +2,49 @@ import React from 'react';
 
 import './autocomplete.styles.scss';
 
-const AutoComplete = ({ hits, currentRefinement, refine }) => (
-  <div className='autoComplete'>  
-    <input
-          type="search"
-          value={currentRefinement}
-          onChange={event => refine(event.currentTarget.value)}
-        />
-    <div className='searchResults'>      
-      {hits.map(hit => (
-          <a key={hit.sofifa_id} className='searchResult' href={`/player/${hit.sofifa_id}`}>{hit.short_name.toUpperCase()}</a>
-      ))}
-    </div>
-  </div>
+function AutoComplete({ hits, currentRefinement, refine, indexName }) {
+  
+  if (indexName == "players") {
+    return (
+      <div className='autoComplete'>  
+        <input
+              type="search"
+              value={currentRefinement}
+              placeholder="Search for a player"
+              onChange={event => refine(event.currentTarget.value)}
+            />
+        <div className='searchResults'>      
+          {hits.map(hit => (
+            <div className='searchResult'>
+              <img src={`http://localhost:8080/api/v1/images/${hit.sofifa_id}?q=player`}/>
+              <a key={hit.sofifa_id} href={`/player/${hit.sofifa_id}`}>{hit.short_name}</a>
+            </div>
+          ))}
+        </div>
+      </div>
+    )
+  } else {
+    return(
+      <div className='autoComplete'>  
+        <input
+              type="search"
+              value={currentRefinement}
+              placeholder="Search for a team"
+              onChange={event => refine(event.currentTarget.value)}
+            />
+        <div className='searchResults'>      
+          {hits.map(hit => (
+            <div className='searchResult'>
+              <img src={`http://localhost:8080/api/v1/images/${hit.ext}?q=team`}/>
+              <a key={hit.ext} href={`/team/${hit.ext}/${hit.name}`}>{hit.name}</a>
+            </div>
+          ))}
+        </div>
+      </div>
+    )
+  }
 
-);
+  
+};
 
 export default AutoComplete;
