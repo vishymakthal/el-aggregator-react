@@ -45,12 +45,13 @@ class HomePage extends React.Component {
                         <Grid item>Teams</Grid>
                         </Grid>
                     </Typography>
-                    <FormControlLabel component="div"
+                    {// TODO - Get full search working
+                    /* <FormControlLabel component="div"
                         control={<Switch disabled={this.state.checkedIndex} checked={this.state.fullSearch} onChange={this.togglePlayerSearch} name="fullSearch" />}
                         label="Full Search"
-                    />
+                    /> */}
                 </FormGroup>
-                <SearchBox index={ix}/>
+                <SearchBox index={ix} full={this.state.fullSearch} />
             </div>
         )
     }

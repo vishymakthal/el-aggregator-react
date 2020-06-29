@@ -9,9 +9,11 @@ const Header = () => (
            EL AGGREGATOR 
         </Link>
         <div className='options'>
-            <Link className='option' to='/sign-in'>
+            {
+            // TODO - Implement sign in once lists are done
+            /* <Link className='option' to='/sign-in'>
                SIGN IN 
-            </Link>
+            </Link> */}
         </div>
     </div>
 )

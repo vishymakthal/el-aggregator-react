@@ -10,6 +10,7 @@ const ProfileSection = ({playerData}) => (
             <br/>
             <b>{playerData.club} | {playerData.nationality}</b>
             <p>{playerData.age} | {playerData.player_positions}</p>
+            <p>{playerData.bio}</p>
         </div>
     </>
 );

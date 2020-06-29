@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './teampage.styles.scss';
+
 class TeamPage extends React.Component {
 
     constructor(props) {
@@ -20,14 +22,18 @@ class TeamPage extends React.Component {
 
     render () {
         
+        const name = this.props.match.params.name.toUpperCase();
         const img = `http://localhost:8080/api/v1/images/${this.props.match.params.id}?q=team`;
         const players = Object.keys(this.state.players).map((key, ix) =>
-                        <li>{this.state.players[key].short_name}</li>
+                    <div className='searchResult'>
+                        <img src={`http://localhost:8080/api/v1/images/${key}?q=player`}/>
+                        <a key={key} href={`/player/${key}`}>{this.state.players[key].short_name}</a>
+                    </div>
                     );
         return(
             <div className='teamPage'>
-                <h1>Team Page</h1>
-                <img src={img}/>
+                <h1>{name}</h1>
+                <img src={img} className='teamImg'/>
                 <ul>
                     {players}
                 </ul> 
