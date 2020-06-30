@@ -1,24 +1,33 @@
 import React from 'react';
+import ReactPlayer from 'react-player/youtube'
 
 import './highlight-section.styles.scss';
 
 
 
-function HighlightSection({playerData}) {
+function HighlightSection({playerData, youtubePreview}) {
     
-    const goals = playerData.highlights.goals.map((goal) =>
+    const goals = playerData.reddit.goals.map((goal) =>
                     <div className='highlightLink'>
                         <a href={`${goal.link}`} target="blank">{goal.title}</a>
                     </div>
-                 );
-
+                 );    
     return (
         <>
             <div className='highlightSection'>
-               <h3> /r/soccer HIGHLIGHTS </h3>
-               <ul>
-                   {goals}
-                </ul> 
+                <div className='highlightSubsection'>               
+                    <h3> /r/soccer HIGHLIGHTS </h3>
+                      <ul>
+                        {goals}
+                      </ul>
+                </div>
+                
+                <div className='highlightSubsection'>               
+                    <h3> YOUTUBE HIGHLIGHTS </h3> 
+                      <ul>
+                        <ReactPlayer url={`https://youtube.com/watch?v=${youtubePreview.video_id}`}/>
+                      </ul>
+                </div>
             </div>
         </>
     )

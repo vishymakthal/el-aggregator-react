@@ -12,32 +12,33 @@ class PlayerPage extends React.Component {
         super(props);
 
         this.state = {
-            playerData : { 'highlights' : {
-                'goals' : []
-            }},
-            bio : '',
+            playerData : null,
+            youtubePreview: null,
         }
     }
 
-    async componentDidMount() {
-        fetch(`http://localhost:8080/api/v1/players/${this.props.match.params.id}`, {method: 'GET'})
+    componentWillMount() {
+        fetch(`http://el-aggregator.herokuapp.com/api/v1/players/${this.props.match.params.id}`, {method: 'GET'})
         .then(response => response.json())
-        .then(player => this.setState({playerData : player}));
+        .then(player => this.setState({playerData : player, youtubePreview: player.youtube.highlights[0]}));
        
     }
 
     render () {
 
         const playerData = this.state.playerData;
-        playerData.id = this.props.match.params.id; 
-        playerData.img = `http://localhost:8080/api/v1/images/${this.props.match.params.id}?q=player`;
+        if (playerData) {
+            playerData.id = this.props.match.params.id; 
+            playerData.img = `http://el-aggregator.herokuapp.com/api/v1/images/${this.props.match.params.id}?q=player`;
+        }
+        const youtubePreview = this.state.youtubePreview;
 
         return(
 
             <div className='playerPage'>
-                <ProfileSection playerData={playerData} />
-                <FifaSection playerData={playerData} />
-                <HighlightSection playerData={playerData} />
+                {this.state.playerData ? <ProfileSection playerData={playerData} /> : <h3>LOADING</h3>}
+                {this.state.playerData ? <FifaSection playerData={playerData} /> : <h3>LOADING</h3> }
+                {this.state.playerData ? <HighlightSection playerData={playerData} youtubePreview={youtubePreview}/> : <h3>LOADING</h3>}
             </div>
         )
     }

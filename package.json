@@ -12,6 +12,7 @@
     "react-dom": "^16.8.6",
     "react-instantsearch": "^5.4.0",
     "react-instantsearch-dom": "^5.4.0",
+    "react-player": "^2.4.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "2.1.8"
   },
