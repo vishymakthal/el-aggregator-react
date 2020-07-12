@@ -4,7 +4,7 @@ import './autocomplete.styles.scss';
 
 function AutoComplete({ hits, currentRefinement, refine, indexName }) {
   
-  if (indexName == "players") {
+  if (indexName === "players") {
     return (
       <div className='autoComplete'>  
         <input
@@ -16,7 +16,7 @@ function AutoComplete({ hits, currentRefinement, refine, indexName }) {
         <div className='searchResults'>      
           {hits.map(hit => (
             <div className='searchResult'>
-              <img src={`http://el-aggregator.herokuapp.com/api/v1/images/${hit.sofifa_id}?q=player`}/>
+              <img alt={hit.short_name} src={`http://el-aggregator.herokuapp.com/api/v1/images/${hit.sofifa_id}?q=player`}/>
               <a key={hit.sofifa_id} href={`/player/${hit.sofifa_id}`}>{hit.short_name}</a>
             </div>
           ))}
@@ -35,7 +35,7 @@ function AutoComplete({ hits, currentRefinement, refine, indexName }) {
         <div className='searchResults'>      
           {hits.map(hit => (
             <div className='searchResult'>
-              <img src={`http://el-aggregator.herokuapp.com/api/v1/images/${hit.ext}?q=team`}/>
+              <img alt={hit.name} src={`http://el-aggregator.herokuapp.com/api/v1/images/${hit.ext}?q=team`}/>
               <a key={hit.ext} href={`/team/${hit.ext}/${hit.name}`}>{hit.name}</a>
             </div>
           ))}

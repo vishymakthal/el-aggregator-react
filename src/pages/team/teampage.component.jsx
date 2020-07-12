@@ -26,14 +26,14 @@ class TeamPage extends React.Component {
         const img = `http://el-aggregator.herokuapp.com/api/v1/images/${this.props.match.params.id}?q=team`;
         const players = Object.keys(this.state.players).map((key, ix) =>
                     <div className='searchResult'>
-                        <img src={`http://el-aggregator.herokuapp.com/api/v1/images/${key}?q=player`}/>
+                        <img alt={key} src={`http://el-aggregator.herokuapp.com/api/v1/images/${key}?q=player`}/>
                         <a key={key} href={`/player/${key}`}>{this.state.players[key].short_name}</a>
                     </div>
                     );
         return(
             <div className='teamPage'>
                 <h1>{name}</h1>
-                <img src={img} className='teamImg'/>
+                <img src={img} alt={name} className='teamImg'/>
                 <ul>
                     {players}
                 </ul> 
