@@ -4,6 +4,7 @@ import ProfileSection from '../../components/player/profile-section/profile-sect
 import FifaSection from '../../components/player/fifa-section/fifa-section.component';
 import HighlightSection from '../../components/player/highlight-section/highlight-section.component';
 
+
 import './playerpage.styles.scss';
 
 class PlayerPage extends React.Component {
@@ -36,9 +37,9 @@ class PlayerPage extends React.Component {
         return(
 
             <div className='playerPage'>
-                {this.state.playerData ? <ProfileSection playerData={playerData} /> : <h3>LOADING</h3>}
-                {this.state.playerData ? <FifaSection playerData={playerData} /> : <h3>LOADING</h3> }
-                {this.state.playerData ? <HighlightSection playerData={playerData} youtubePreview={youtubePreview}/> : <h3>LOADING</h3>}
+                <ProfileSection playerData={playerData} />
+                <FifaSection playerData={playerData} />
+                {playerData ? <HighlightSection playerData={playerData} youtubePreview={youtubePreview}/> : <br/> }
             </div>
         )
     }
