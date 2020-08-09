@@ -39,7 +39,20 @@ const FifaSection = ({playerData}) => (
                     {playerData ? playerData.potential : 'loading' }
                 </span>
             </div>
-            {playerData ? <Radar data={loadChartData(playerData)} /> : <Skeleton /> }
+            {playerData ?
+            <> 
+                <Radar data={loadChartData(playerData)} />
+                <b>Similar Players</b>
+                <ul>
+                    {playerData.transfermarkt.similar_players.map((player) =>
+                            <li>
+                                <a>{player}</a>
+                            </li>
+                        )}
+                </ul>
+            </>
+            : 
+            <Skeleton /> }
         </div>
     </>
 );

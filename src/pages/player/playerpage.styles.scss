@@ -9,4 +9,9 @@
         font-size: 0.8em;
         letter-spacing: 0.1em; 
     }
+
+    .dataSection {
+        display: flex;
+        flex-wrap: wrap; 
+    }
 }

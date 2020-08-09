@@ -24,9 +24,7 @@ function HighlightSection({playerData, youtubePreview}) {
                 
                 <div className='highlightSubsection'>               
                     <h3> YOUTUBE HIGHLIGHTS </h3> 
-                      <ul>
-                        <ReactPlayer url={`https://youtube.com/watch?v=${youtubePreview.video_id}`}/>
-                      </ul>
+                        <ReactPlayer url={`https://youtube.com/watch?v=${youtubePreview.video_id}`} width={'70%'}/>
                 </div>
             </div>
         </>

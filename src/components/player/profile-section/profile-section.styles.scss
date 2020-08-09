@@ -15,10 +15,18 @@
         letter-spacing: 0.075em;
     }
 
-
     .playerImg {
         height: 120px;
         width: 120px;
     }
 
+    .iconImg {
+        height: 24px;
+        width: 24px;
+    }
+
+    .linkBar {
+        display: flex;
+        align-content: space-between;
+    }
 }
