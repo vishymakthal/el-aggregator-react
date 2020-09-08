@@ -15,17 +15,19 @@ function HighlightSection({playerData, youtubePreview}) {
     return (
         <>
             <div className='highlightSection'>
+
+                <div className='highlightSubsection'>               
+                    <h3> YOUTUBE HIGHLIGHTS </h3> 
+                        <ReactPlayer url={`https://youtube.com/watch?v=${youtubePreview.video_id}`} width={'70%'}/>
+                </div>
+
                 <div className='highlightSubsection'>               
                     <h3> /r/soccer HIGHLIGHTS </h3>
                       <ul>
                         {goals}
                       </ul>
-                </div>
+                </div>                
                 
-                <div className='highlightSubsection'>               
-                    <h3> YOUTUBE HIGHLIGHTS </h3> 
-                        <ReactPlayer url={`https://youtube.com/watch?v=${youtubePreview.video_id}`} width={'70%'}/>
-                </div>
             </div>
         </>
     )
