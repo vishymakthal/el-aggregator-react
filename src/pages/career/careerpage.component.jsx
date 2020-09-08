@@ -13,7 +13,7 @@ class CareerPage extends React.Component {
     }
 
     async componentDidMount () {
-        fetch('http://el-aggregator-api-q3hl2qd3ia-uk.a.run.app/api/v1/players/team/979786270', {method: 'GET'})
+        fetch('https://-aggregator-api-q3hl2qd3ia-uk.a.run.app/api/v1/players/team/979786270', {method: 'GET'})
         .then(response => response.json())
         .then(players => this.setState({squad : players}))
     }
