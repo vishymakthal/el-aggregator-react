@@ -19,7 +19,7 @@ class PlayerPage extends React.Component {
     }
 
     componentWillMount() {
-        fetch(`https://-aggregator-api-q3hl2qd3ia-uk.a.run.app/api/v1/players/${this.props.match.params.id}`, {method: 'GET'})
+        fetch(`https://el-aggregator-api-q3hl2qd3ia-uk.a.run.app/api/v1/players/${this.props.match.params.id}`, {method: 'GET'})
         .then(response => response.json())
         .then(player => this.setState({playerData : player, youtubePreview: player.youtube.highlights[0]}));
        
@@ -30,7 +30,7 @@ class PlayerPage extends React.Component {
         const playerData = this.state.playerData;
         if (playerData) {
             playerData.id = this.props.match.params.id; 
-            playerData.img = `https://-aggregator-api-q3hl2qd3ia-uk.a.run.app/api/v1/images/${this.props.match.params.id}?q=player`;
+            playerData.img = `https://el-aggregator-api-q3hl2qd3ia-uk.a.run.app/api/v1/images/${this.props.match.params.id}?q=player`;
         }
         const youtubePreview = this.state.youtubePreview;
 
